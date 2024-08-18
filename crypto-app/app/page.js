@@ -7,8 +7,8 @@ import HyperText from "./components/animata/text/hyper-text";
 import millify from "millify";
 import Link from "next/link";
 import CryptoList from "../app/components/CyptoList";
+import NewsList from "../app/components/NewsList";
 import { Show } from "./Services/ShowSlice";
-import { useEffect } from "react";
 import SparklesText from "./components/animata/text/sparkles-text";
 export default function Home({ simplified }) {
   const show = useSelector((state) => state.show.value);
@@ -145,6 +145,8 @@ export default function Home({ simplified }) {
           </Link>
         </div>
       </div>
+
+      <NewsList />
     </main>
   );
 }
