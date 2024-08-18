@@ -1,7 +1,7 @@
 "use client";
 
-import { cn } from "@/app/lib/utils";
 import { useEffect, useState } from "react";
+import { cn } from "../../../lib/utils";
 
 interface TextProps {
   /**
@@ -46,7 +46,7 @@ export default function TextBorderAnimation({
     >
       <span
         className={cn(
-          "text-3xl font-bold tracking-tight hover:font-extrabold transition-all cursor-pointer text-foreground",
+          "text-3xl font-bold tracking-tight hover:font-extrabold transition-all cursor-pointer text-foreground ",
           className
         )}
       >

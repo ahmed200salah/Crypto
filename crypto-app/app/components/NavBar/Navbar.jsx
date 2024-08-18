@@ -1,18 +1,27 @@
 import TextBorderAnimation from "../animata/text/text-border-animation";
 import { CoolMode } from "../animata/Cool-Mode/Cool-Mode";
 import Logo from "./Logo";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <div className="mx-10 mt-7 flex flex-row justify-between items-center">
-      <div>
+    <div className="mx-10 mt-7 flex flex-row justify-between items-center border-b-2">
+      <div className=" mb-2">
         <Logo />
       </div>
       <div className="flex flex-row gap-7 max-md:hidden">
-        <TextBorderAnimation text="Home" />
-        <TextBorderAnimation text="Crypto" />
-        <TextBorderAnimation text="Exchanges" />
-        <TextBorderAnimation text="News" />
+        <Link href={"/"}>
+          <TextBorderAnimation text="Home"  />
+        </Link>
+        <Link href={"/Crypto"}>
+          <TextBorderAnimation text="Crypto" />
+        </Link>
+        <Link href={"/Exchanges"}>
+          <TextBorderAnimation text="Exchanges" />
+        </Link>
+        <Link href={"/News"}>
+          <TextBorderAnimation text="News" />
+        </Link>
       </div>
       <div>
         <label className="swap swap-rotate">

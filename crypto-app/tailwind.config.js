@@ -16,6 +16,19 @@ module.exports = {
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["light", "dark", "cupcake"],
+    themes: [ "dark", "cupcake"],
+  },
+  module: {
+    rules: [
+      // ... other rules
+      {
+        test: /\.wav$/,
+        loader: "file-loader",
+        options: {
+          name: "[name].[ext]",
+          outputPath: "audio/",
+        },
+      },
+    ],
   },
 };
