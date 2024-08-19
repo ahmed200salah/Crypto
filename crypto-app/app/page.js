@@ -7,7 +7,6 @@ import HyperText from "./components/animata/text/hyper-text";
 import millify from "millify";
 import Link from "next/link";
 import CryptoList from "../app/components/CyptoList";
-import NewsList from "../app/components/NewsList";
 import { Show } from "./Services/ShowSlice";
 import SparklesText from "./components/animata/text/sparkles-text";
 export default function Home({ simplified }) {
@@ -33,10 +32,7 @@ export default function Home({ simplified }) {
           "grid md:grid-cols-3  h-[500px] w-full flex-col gap-4 lg:h-[250px] lg:flex-row"
         }
       >
-        <MagicCard
-          className="cursor-pointer items-center justify-center shadow-2xl whitespace-nowrap text-4xl  hover:translate-x-1 transition-all active:scale-95"
-          gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
-        >
+        <MagicCard className="cursor-pointer items-center justify-center shadow-2xl whitespace-nowrap text-4xl  hover:translate-x-1 transition-all active:scale-95">
           <div className=" flex flex-row gap-3 items-center justify-center">
             <h1 className="text-4xl tracking-tight font-bold text-[#8979ff] ">
               Total:
@@ -119,34 +115,6 @@ export default function Home({ simplified }) {
       </div>
 
       <CryptoList />
-
-      <div className="flex flex-col">
-        <div className="flex flex-row justify-between items-center">
-          <h1 className="text-4xl tracking-tight font-bold text-[#8979ff]  mx-auto">
-            Latest Crypto News
-          </h1>
-          <Link
-            href={"/Crypto"}
-            className="font-extrabold flex tracking-tight group gap-2 text-[#A28B55] "
-          >
-            See more
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="size-6 group-hover:translate-x-2 transition-all"
-            >
-              <path
-                fillRule="evenodd"
-                d="M16.72 7.72a.75.75 0 0 1 1.06 0l3.75 3.75a.75.75 0 0 1 0 1.06l-3.75 3.75a.75.75 0 1 1-1.06-1.06l2.47-2.47H3a.75.75 0 0 1 0-1.5h16.19l-2.47-2.47a.75.75 0 0 1 0-1.06Z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </Link>
-        </div>
-      </div>
-
-      <NewsList />
     </main>
   );
 }
