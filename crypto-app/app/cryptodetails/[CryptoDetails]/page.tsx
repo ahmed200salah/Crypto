@@ -217,7 +217,7 @@ const CryptoDetails = () => {
         <h1 className="text-5xl font-bold mb-2 text-center max-md:text-3xl">
           What is {cryptoDetails?.name}
         </h1>
-        {<p className=" items-center mx-auto text-left ml-4 font-bold">{HTMLReactParser(cryptoDetails?.description || "")}</p>}
+        {<p className=" items-center max-md:text-left text-center ml-4 font-bold">{HTMLReactParser(cryptoDetails?.description || "")}</p>}
         <br />
       </div>
 
