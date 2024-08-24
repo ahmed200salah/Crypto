@@ -15,9 +15,7 @@ export default function Home({ simplified }) {
   const { theme } = useTheme();
   const { data, isFetching } = useGetCryptosQuery(show);
   const globalState = data?.data?.stats;
-  console.log(data);
   const dispatch = useDispatch();
-
   const handleClick = () => {
     dispatch(Show());
   };
@@ -25,61 +23,59 @@ export default function Home({ simplified }) {
   if (isFetching) return "Loading...";
   return (
     <main className="flex min-h-svh p-12 flex-col gap-12">
-      <SparklesText text="Global Crypto Stats" className=" text-center" />
+      <SparklesText text="Global Crypto Stats" className="text-center" />
 
       <div
         className={
           "grid md:grid-cols-3  h-[500px] w-full flex-col gap-4 lg:h-[250px] lg:flex-row"
         }
       >
-        <MagicCard className="cursor-pointer items-center justify-center shadow-2xl whitespace-nowrap text-4xl  hover:translate-x-1 transition-all active:scale-95">
-          <div className=" flex flex-row gap-3 items-center justify-center">
-            <h1 className="text-4xl tracking-tight font-bold text-[#8979ff] ">
-              Total:
-            </h1>
+        <MagicCard className="cursor-pointer items-center justify-center shadow-2xl  whitespace-nowrap text-4xl max-xl:text-2xl  hover:translate-x-1 transition-all active:scale-95">
+          <div className=" flex flex-row gap-3 items-center justify-center ">
+            <h1 className="tracking-tight font-bold text-[#8979ff] ">Total:</h1>
             <HyperText text={`${millify(globalState.total)}`} />
             Coins
           </div>
         </MagicCard>
         <MagicCard
-          className="cursor-pointer flex-col items-center justify-center shadow-2xl whitespace-nowrap text-4xl hover:translate-x-1 transition-all active:scale-95 "
+          className="cursor-pointer flex-col items-center justify-center shadow-2xl whitespace-nowrap text-4xl max-xl:text-2xl hover:translate-x-1 transition-all active:scale-95 "
           gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
         >
           <div className=" flex flex-row gap-3 items-center justify-center">
-            <h1 className="text-3xl tracking-tight font-bold text-[#8979ff] ">
+            <h1 className="tracking-tight font-bold text-[#8979ff] ">
               Total 24h Volume:
             </h1>
             <HyperText text={`${millify(globalState.total24hVolume)}`} />
           </div>
         </MagicCard>
         <MagicCard
-          className="cursor-pointer flex-col items-center justify-center shadow-2xl whitespace-nowrap text-4xl hover:translate-x-1 transition-all active:scale-95"
+          className="cursor-pointer flex-col items-center max-xl:text-2xl justify-center shadow-2xl whitespace-nowrap text-4xl hover:translate-x-1 transition-all active:scale-95"
           gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
         >
           <div className=" flex flex-row gap-3 items-center justify-center">
-            <h1 className="text-3xl tracking-tight font-bold text-[#8979ff] ">
+            <h1 className=" tracking-tight font-bold text-[#8979ff] ">
               Total Exchanges:
             </h1>
             <HyperText text={`${globalState.totalExchanges}`} />
           </div>
         </MagicCard>
         <MagicCard
-          className="cursor-pointer flex-col items-center justify-center shadow-2xl whitespace-nowrap text-4xl hover:translate-x-1 transition-all active:scale-95"
+          className="cursor-pointer max-xl:text-2xl flex-col items-center justify-center shadow-2xl whitespace-nowrap text-4xl hover:translate-x-1 transition-all active:scale-95"
           gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
         >
           <div className=" flex flex-row gap-3 items-center justify-center">
-            <h1 className="text-3xl tracking-tight font-bold text-[#8979ff] ">
+            <h1 className=" tracking-tight font-bold text-[#8979ff] ">
               Total MarketCap:
             </h1>
             <HyperText text={`${millify(globalState.totalMarketCap)}`} />
           </div>
         </MagicCard>
         <MagicCard
-          className="cursor-pointer flex-col items-center justify-center shadow-2xl whitespace-nowrap text-4xl hover:translate-x-1 transition-all active:scale-95"
+          className="cursor-pointer max-xl:text-2xl flex-col items-center justify-center shadow-2xl whitespace-nowrap text-4xl hover:translate-x-1 transition-all active:scale-95"
           gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
         >
           <div className=" flex flex-row gap-3 items-center justify-center">
-            <h1 className="text-3xl tracking-tight font-bold text-[#8979ff] ">
+            <h1 className=" tracking-tight font-bold text-[#8979ff] ">
               Total Markets:
             </h1>
             <HyperText text={`${millify(globalState.totalMarkets)}`} />
@@ -88,8 +84,8 @@ export default function Home({ simplified }) {
       </div>
 
       <div className="flex flex-col">
-        <div className="flex flex-row justify-between items-center ">
-          <h1 className="text-4xl tracking-tight font-bold text-[#8979ff] mx-auto ">
+        <div className="flex flex-row max-xl:flex-col justify-between items-center">
+          <h1 className="text-4xl max-xl:text-xl mb-3 tracking-tight font-extrabold text-[#8979ff] mx-auto ">
             Top 10 Cryptocurrencies in the world
           </h1>
           <Link

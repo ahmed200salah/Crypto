@@ -1,5 +1,4 @@
 import TextBorderAnimation from "../animata/text/text-border-animation";
-import { CoolMode } from "../animata/Cool-Mode/Cool-Mode";
 import Logo from "./Logo";
 import Link from "next/link";
 
@@ -11,15 +10,15 @@ export default function Navbar() {
       </div>
       <div className="flex flex-row gap-7 max-md:hidden">
         <Link href={"/"}>
-          <TextBorderAnimation text="Home"  />
+          <TextBorderAnimation text="Home" />
         </Link>
-        <Link href={"/Crypto"}>
+        <Link href={"/"}>
           <TextBorderAnimation text="Crypto" />
         </Link>
-        <Link href={"/Exchanges"}>
+        <Link href={"/"}>
           <TextBorderAnimation text="Exchanges" />
         </Link>
-        <Link href={"/News"}>
+        <Link href={"/"}>
           <TextBorderAnimation text="News" />
         </Link>
       </div>

@@ -15,17 +15,22 @@ export default function LineChart({
   }
 
   for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
-    coinTimestamp.push(new Date(coinHistory?.data?.history[i].timestamp).toLocaleDateString());
+    coinTimestamp.push(
+      new Date(coinHistory?.data?.history[i].timestamp).toLocaleDateString()
+    );
   }
   const data = {
     labels: coinTimestamp,
     datasets: [
       {
-        label: 'Price In USD',
+        label: "Price In USD",
         data: coinPrice,
         fill: false,
-        backgroundColor: '#0071bd',
-        borderColor: '#0071bd',
+        lineTension: 0.2,
+        borderColor: "#0071bd",
+        backgroundColor: "#0071bd",
+        borderColor: "#0071bd",
+        pointRadius: 1,
       },
     ],
   };
@@ -35,7 +40,9 @@ export default function LineChart({
       yAxes: [
         {
           ticks: {
+            
             beginAtZero: true,
+                        
           },
         },
       ],
