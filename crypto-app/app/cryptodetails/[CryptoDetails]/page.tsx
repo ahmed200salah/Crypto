@@ -104,9 +104,8 @@ const CryptoDetails = () => {
     },
   ];
 
-  
   return (
-    <div className=" min-h-svh mt-10">
+    <div className="min-h-svh mt-10">
       <div className="flex flex-col justify-center items-center">
         <h1 className="text-3xl font-bold">
           {cryptoDetails?.name} ({cryptoDetails?.symbol}) Price
@@ -152,8 +151,8 @@ const CryptoDetails = () => {
         />
       </div>
 
-      <div className=" flex flex-row gap-7 items-center justify-center">
-        <div>
+      <div className="flex flex-row max-md:flex-col gap-7 max-md:gap-12 items-center justify-center max-md:ml-5 ">
+        <div >
           <div className="flex flex-col justify-center items-center">
             <h1 className="text-5xl font-bold mb-2">Stats</h1>
             <p>An overview showing the statistics of {cryptoDetails?.name}</p>
@@ -185,7 +184,7 @@ const CryptoDetails = () => {
 
         <div>
           <div className="flex flex-col justify-center items-center">
-            <h1 className="text-5xl font-bold mb-2">Other Stats Info</h1>
+            <h1 className="text-5xl font-bold mb-2 max-md:text-4xl">Other Stats Info</h1>
             <p>An overview showing the statistics of {cryptoDetails?.name}</p>
           </div>
 
@@ -214,21 +213,21 @@ const CryptoDetails = () => {
         </div>
       </div>
 
-      <div className="flex flex-col justify-center items-center">
-        <h1 className="text-5xl font-bold mb-2">
+      <div className="flex flex-col justify-center items-center mx-auto">
+        <h1 className="text-5xl font-bold mb-2 text-center max-md:text-3xl">
           What is {cryptoDetails?.name}
         </h1>
-        {<p>{HTMLReactParser(cryptoDetails?.description || "")}</p>}
+        {<p className=" items-center mx-auto text-left ml-4 font-bold">{HTMLReactParser(cryptoDetails?.description || "")}</p>}
         <br />
       </div>
 
-      <div className="flex flex-col mb-7">
+      <div className="flex flex-col mb-7 ">
         <h1 className="text-5xl font-bold text-center mb-7">
           {cryptoDetails?.name} Links
         </h1>
         {cryptoDetails.links.map((link) => (
           <>
-            <div className=" mx-auto w-96 justify-between">
+            <div className="mx-auto w-96 justify-between">
               <div className="flex gap-20 items-center justify-between ">
                 <div className="font-bold ">{link.type}</div>
 

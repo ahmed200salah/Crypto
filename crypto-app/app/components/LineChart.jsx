@@ -50,7 +50,7 @@ export default function LineChart({
   };
 
   return (
-    <div className="flex flex-col items-center justify-center w-[50%] mb-10">
+    <div className="flex flex-col items-center justify-center w-[50%] mb-10 max-md:w-[90%] ">
       <div>
         <h1 className="font-bold mb-3 text-xl">Line Chart for {coinName}</h1>
         <div>
