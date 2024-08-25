@@ -152,7 +152,7 @@ const CryptoDetails = () => {
       </div>
 
       <div className="flex flex-row max-md:flex-col gap-7 max-md:gap-12 items-center justify-center max-md:ml-5 ">
-        <div >
+        <div>
           <div className="flex flex-col justify-center items-center">
             <h1 className="text-5xl font-bold mb-2">Stats</h1>
             <p>An overview showing the statistics of {cryptoDetails?.name}</p>
@@ -184,7 +184,9 @@ const CryptoDetails = () => {
 
         <div>
           <div className="flex flex-col justify-center items-center">
-            <h1 className="text-5xl font-bold mb-2 max-md:text-4xl">Other Stats Info</h1>
+            <h1 className="text-5xl font-bold mb-2 max-md:text-4xl">
+              Other Stats Info
+            </h1>
             <p>An overview showing the statistics of {cryptoDetails?.name}</p>
           </div>
 
@@ -217,7 +219,11 @@ const CryptoDetails = () => {
         <h1 className="text-5xl font-bold mb-2 text-center max-md:text-3xl">
           What is {cryptoDetails?.name}
         </h1>
-        {<p className=" items-center max-md:text-left text-center ml-4 font-bold">{HTMLReactParser(cryptoDetails?.description || "")}</p>}
+        {
+          <p className=" items-center max-md:text-left text-center ml-4 font-bold">
+            {HTMLReactParser(cryptoDetails?.description || "")}
+          </p>
+        }
         <br />
       </div>
 
