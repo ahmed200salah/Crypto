@@ -7,10 +7,11 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function CyptoList() {
-  const [cryptos, setCryptos] = useState(data?.data?.coins);
   const [search, setSearch] = useState("");
+  const show = useSelector((state) => state.show.value);
   const { data, isFetching } = useGetCryptosQuery(show);
-  
+  const [cryptos, setCryptos] = useState(data?.data?.coins);
+
   useEffect(() => {
     setCryptos(data?.data?.coins);
 
@@ -21,7 +22,6 @@ export default function CyptoList() {
     setCryptos(filteredData);
   }, [data, search]);
 
-  const show = useSelector((state) => state.show.value);
 
   if (isFetching) return <p>Loading...</p>;
   return (
