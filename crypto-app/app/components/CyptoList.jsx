@@ -6,12 +6,6 @@ import { useSelector } from "react-redux";
 import Link from "next/link";
 
 export default function CyptoList() {
-  const show = useSelector((state) => state.show.value);
-
-  const { data, isFetching } = useGetCryptosQuery(show);
-  const [cryptos, setCryptos] = useState(data?.data?.coins);
-  const [search, setSearch] = useState("");
-  if (isFetching) return <p>Loading...</p>;
   useEffect(() => {
     setCryptos(data?.data?.coins);
 
@@ -22,6 +16,12 @@ export default function CyptoList() {
     setCryptos(filteredData);
   }, [data, search]);
 
+  const show = useSelector((state) => state.show.value);
+  const { data, isFetching } = useGetCryptosQuery(show);
+  const [cryptos, setCryptos] = useState(data?.data?.coins);
+  const [search, setSearch] = useState("");
+
+  if (isFetching) return <p>Loading...</p>;
   return (
     <>
       <div className="flex flex-row items-center justify-center">
@@ -31,19 +31,23 @@ export default function CyptoList() {
           onChange={(e) => {
             setSearch(e.target.value);
           }}
-          className="w-1/3 p-2 rounded-lg bg-slate-200 text-black max-lg:w-1/2 max-md:w-full" 
+          className="w-1/3 p-2 rounded-lg bg-slate-200 text-black max-lg:w-1/2 max-md:w-full"
         />
       </div>
       <div className="grid grid-cols-3 gap-6 text-black max-lg:grid-cols-2 max-md:grid-cols-1">
         {cryptos?.map((coin) => (
-          <Link href={`/cryptodetails/${coin.uuid}`}>
+          <Link href={`/cryptodetails/${coin.uuid}`} key={coin}>
             <div
               key={coin.uuid}
               className="flex flex-col gap-2 p-4 rounded-xl cursor-pointer bg-slate-200 h-[110px] active:scale-95 transition-all hover:translate-x-2 group hover:bg-slate-950 hover:text-white"
             >
               <div className="flex flex-row items-center justify-between">
                 <div className="flex flex-row items-center gap-3">
-                  <img src={coin.iconUrl} alt={coin.name} className="w-8 h-8 group-hover:scale-125 transition-all" />
+                  <img
+                    src={coin.iconUrl}
+                    alt={coin.name}
+                    className="w-8 h-8 group-hover:scale-125 transition-all"
+                  />
                   <h1 className="text-2xl font-bold">
                     {coin.name.slice(0, 20)}
                   </h1>
