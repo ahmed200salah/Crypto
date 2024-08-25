@@ -9,7 +9,7 @@ import Link from "next/link";
 import CryptoList from "../app/components/CyptoList";
 import { Show } from "./Services/ShowSlice";
 import SparklesText from "./components/animata/text/sparkles-text";
-export default function Home({ simplified }) {
+export default function Home() {
   const show = useSelector((state) => state.show.value);
 
   const { theme } = useTheme();
