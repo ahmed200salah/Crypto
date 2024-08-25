@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useGetCryptosQuery } from "../Services/CryptoApi";
 import { useSelector } from "react-redux";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function CyptoList() {
   useEffect(() => {
@@ -43,9 +44,11 @@ export default function CyptoList() {
             >
               <div className="flex flex-row items-center justify-between">
                 <div className="flex flex-row items-center gap-3">
-                  <img
+                  <Image
                     src={coin.iconUrl}
                     alt={coin.name}
+                    width={40}
+                    height={40}
                     className="w-8 h-8 group-hover:scale-125 transition-all"
                   />
                   <h1 className="text-2xl font-bold">
